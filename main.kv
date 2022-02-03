@@ -1,0 +1,353 @@
+# -b(rand)?-[123]-(bright|dark|)
+# -main-text Roboto, sans-serif
+
+!Document:
+  @Set:              -main-text Calibri, sans-serif
+  @Set:              -much-text Calibri, sans-serif
+  
+  @Text_type:        -main-text
+  
+  @Set:              -b-1-colorful #f3c
+  @Set:              -b-2-colorful #f33
+  @Set:              -b-3-colorful #fc3
+  
+  @Set:              -b-1-bright #ff5cd6
+  @Set:              -b-2-bright #ff5c5c
+  @Set:              -b-3-bright #ffd65c
+  
+  @Set:              -b-1-light #ff92e3
+  @Set:              -b-2-light #ff9a9a
+  @Set:              -b-3-light #ffe38a
+  @Set:              -b-4-light #f8ee7a
+  
+  @Set:              -b-1-pale #ffadea
+  @Set:              -b-2-pale #ffb0b0
+  @Set:              -b-3-pale #ffeaad
+  @Set:              -b-4-pale #f8ff9a
+  
+  @Set:              -glass #fff4
+  
+  !Title:
+    @Back_grad:      90deg, -b-1-bright, -b-2-bright, -b-3-bright
+    div:
+      style:         display: inline-block;
+      @Width:        50%
+      Резюме
+    div:
+      style:         display: inline-block; margin: 5px; padding: 0; vertical-align: top;
+      @Width:        calc(50% - 10px)
+      @Height:       calc(100% - 10px)
+      @Back_fill:    -glass
+      Тунёв Андрей Витальевич
+  
+  div:
+    @Height:         20px
+  
+  !SmartColumns:
+    !Column:
+      !Title:
+        @Back_fill:  -b-1-bright
+        Прошлое
+      
+      !Subtitle:
+        style:       margin-top: 10px;
+        @Back_fill:  -b-1-light
+        @Height:     40px
+        @LHeight:    40px
+        Хакатон "Let's do IT" (2020 год)
+      
+      !Subtitle:
+        style:       padding: 5px 0;
+        @Back_fill:  -b-1-pale
+        @Height:     50px
+        @LHeight:    25px
+        3 место - проект MarksAnywhere
+        div:
+        (перенесение оценок из G.Docs в ЭПОС)
+      
+      !Subtitle:
+        style:       margin-top: 10px;
+        @Back_fill:  #ccc
+        @Height:     40px
+        @LHeight:    40px
+        ВсОШ по информатике
+      
+      !Subtitle:
+        style:       padding: 5px 0;
+        @Back_fill:  #eee
+        @Height:     50px
+        @LHeight:    25px
+        2019-2020 - призёр на муниципальном этапе
+        div:
+        2020-2021 - призёр на региональном этапе
+      
+      !Subtitle:
+        style:       margin-top: 10px;
+        @Back_fill:  #ccc
+        @Height:     40px
+        @LHeight:    40px
+        Сайт для Турнира городов
+      
+      !Subtitle:
+        style:       padding: 5px 0;
+        @Back_fill:  #eee
+        @Height:     50px
+        @LHeight:    25px
+        ??? доработок
+        div:
+        существовал с ??? до ???
+      
+      !Subtitle:
+        style:       margin-top: 10px;
+        @Back_fill:  -b-1-light
+        @Height:     40px
+        @LHeight:    40px
+        Сайт для компании ЖКХ
+      
+      !Subtitle:
+        style:       padding: 5px 0;
+        @Back_fill:  -b-1-pale
+        @Height:     50px
+        @LHeight:    25px
+        0 доработок
+        div:
+        14.08.2021 - 14.11.2021
+    
+    !Column:
+      !Title:
+        @Back_fill:  -b-2-bright
+        Настоящее
+      
+      !Subtitle:
+        style:       margin-top: 10px;
+        @Back_fill:  -b-2-light
+        @Height:     40px
+        @LHeight:    40px
+        Python 3 (графика tkinter, kivy)
+      
+      !Subtitle:
+        style:       padding: 5px 0;
+        @Back_fill:  -b-2-pale
+        @Height:     100px
+        @LHeight:    25px
+        1) MarksAnywhere
+        div:
+        2) безымянная игра с енотом
+        div:
+        3) скраппер бирж для фриланса
+        div:
+        4) веб-сервер
+      
+      !Subtitle:
+        style:       margin-top: 10px;
+        @Back_fill:  -b-2-light
+        @Height:     40px
+        @LHeight:    40px
+        Lua 5.2, 5.3 (OpenComputers)
+      
+      !Subtitle:
+        style:       padding: 5px 0;
+        @Back_fill:  -b-2-pale
+        @Height:     100px
+        @LHeight:    25px
+        1) небольшой "векторный" редактор
+        div:
+        2) параллельный запуск программ
+        div:
+        3) патч для More Luxuries, мода Civ5
+        div:
+        4) сетевая библиотека Thundernet
+      
+      !Subtitle:
+        style:       margin-top: 10px;
+        @Back_fill:  -b-2-light
+        @Height:     40px
+        @LHeight:    40px
+        Java
+      
+      !Subtitle:
+        style:       padding: 5px 0;
+        @Back_fill:  -b-2-pale
+        @Height:     25px
+        @LHeight:    25px
+        1) OCTechnics - мод для Minecraft
+      
+      !Subtitle:
+        style:       margin-top: 10px;
+        @Back_fill:  -b-2-light
+        @Height:     40px
+        @LHeight:    40px
+        C++
+      
+      !Subtitle:
+        style:       padding: 5px 0;
+        @Back_fill:  -b-2-pale
+        @Height:     25px
+        @LHeight:    25px
+        1) DLL для аналога ArtMoney
+      
+      !Subtitle:
+        style:       margin-top: 10px;
+        @Back_fill:  -b-2-light
+        @Height:     40px
+        @LHeight:    40px
+        PHP
+      
+      !Subtitle:
+        style:       padding: 5px 0;
+        @Back_fill:  -b-2-pale
+        @Height:     25px
+        @LHeight:    25px
+        1) (велосипедный) движок форума
+      
+      !Subtitle:
+        style:       margin-top: 10px;
+        @Back_fill:  -b-2-light
+        @Height:     40px
+        @LHeight:    40px
+        VBA
+      
+      !Subtitle:
+        style:       padding: 5px 0;
+        @Back_fill:  -b-2-pale
+        @Height:     25px
+        @LHeight:    25px
+        1) подсчёт ресурсов для крафта вещей
+    
+    !Column:
+      !Title:
+        @Back_fill:  -b-3-bright
+        Будущее
+      
+      !Subtitle:
+        style:       margin-top: 10px;
+        @Back_fill:  -b-3-light
+        @Height:     40px
+        @LHeight:    40px
+        Иннополис
+      
+      !Subtitle:
+        style:       margin-top: 10px;
+        @Back_fill:  -b-3-light
+        @Height:     40px
+        @LHeight:    40px
+        Промышленная разработка
+      
+      !Subtitle:
+        style:       padding: 5px 0;
+        @Back_fill:  -b-3-pale
+        @Height:     230px
+        @LHeight:    25px
+        ожидаемый уровень - middle, 55-75K
+        div:
+          style:     border-bottom: 1px solid; margin: 7px 0;
+        Приоритеты по ЯП
+        div:
+        1) Python, Lua
+        div:
+        2) C++, Java, PHP, VBA
+        div:
+          style:     border-bottom: 1px solid; margin: 7px 0;
+        Приоритетные направления
+        div:
+        1) Бэкенд
+        div:
+        2) Сайты
+        div:
+        3) Клиентские приложения
+      
+      !Subtitle:
+        style:       margin-top: 10px;
+        @Back_fill:  -b-3-light
+        @Height:     40px
+        @LHeight:    40px
+        Проекты
+      
+      !Subtitle:
+        style:       padding: 5px 0;
+        @Back_fill:  -b-3-pale
+        @Height:     125px
+        @LHeight:    25px
+        1) метавселенная на базе игры с енотом
+        div:
+        2) интерпретатор Python на Lua
+        div:
+        3) интерпретатор Lua на Python
+        div:
+        4) нейросети своими руками
+        div:
+        5) TSTS - сбор д/з в одном месте
+  
+  div:
+    @Height:         20px
+  
+  !Title:
+    @Back_grad:      90deg, -b-1-light, -b-2-light, -b-3-light
+    Кул сторис
+  
+  !SmartColumns:
+    !Column:
+      div:
+        style:       padding: 8px;
+        @Back_fill:  -b-4-light
+        @Centred:    1
+        Почему opacity = 0.9 ломает отображение меню?
+        
+      div:
+        style:       padding: 12px; text-align: justify;
+        @Back_fill:  -b-4-pale
+        @Text_type:  -much-text
+        Однажды я разрабатывал сайт. При наведении на пункт меню&nbsp;
+        должно было всплывать подменю. Это работало до&nbsp;
+        того момента, когда я захотел сделать блоки новостей&nbsp;
+        полупрозрачными. Тогда подменю неожиданно начало&nbsp;
+        отображаться под блоком новостей, что мешало кликам.
+        br:
+        Гугление не выдало никаких результатов. Однако&nbsp;
+        я вспомнил одну статью на Хабре, в которой упоминались&nbsp;
+        контексты наложения и то, что применение прозрачности&nbsp;
+        к блоку создавало новый контекст наложения. Проблема&nbsp;
+        решилась несложно - нужно было сделать прозрачным&nbsp;
+        лишь фон блока. После этого меню заработало.
+    
+    !Column:
+      div:
+        style:       padding: 8px;
+        @Back_fill:  -b-4-light
+        @Centred:    1
+        О рантайм-патчах библиотек в Python
+        
+      div:
+        style:       padding: 12px; text-align: justify;
+        @Back_fill:  -b-4-pale
+        @Text_type:  -much-text
+        Один раз я играл в StarCraft II, и с одним из соперников&nbsp;
+        получилась красивая игра. Я захотел поменять имена&nbsp;
+        действующих лиц, и с этой целью начал обыскивать интернет.&nbsp;
+        Нашлись только программа Scelight для анализа реплеев и&nbsp;
+        пара библиотек на Python (mpyq и s2protocol). Ни то, ни&nbsp;
+        другое не умело сохранять новые реплеи.
+        br:
+        Тогда я решил написать свою программу на Python,&nbsp;
+        заменяющую имена игроков на другие. Оказалось, что&nbsp;
+        в s2protocol есть задел на возможность сохранения&nbsp;
+        реплеев, но этот код вообще не работает. Пришлось&nbsp;
+        писать в своём коде патч.
+        br:
+        Сама история. Запускаю программу - не работает, надо&nbsp;
+        пропатчить запись строк. Делаю патч, сохраняю, снова&nbsp;
+        запускаю программу - не работает. Отладочный print&nbsp;
+        тоже не сработал. И внезапно выяснилось, что я изменил&nbsp;
+        функцию не в том классе, где надо.
+        br:
+        P.S. С тех же пор я научился пользоваться отладчиком&nbsp;
+        (pdb). Мне понравилось, что он позволяет посмотреть&nbsp;
+        на весь стек вызовов при ошибке.
+        br:
+        P.P.S. Новый реплей скормить старкрафту так и&nbsp;
+        не удалось.
+  
+  div:
+    @Height:         20px
+  
+  !Rocyonery:
