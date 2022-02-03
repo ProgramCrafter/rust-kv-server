@@ -1,11 +1,12 @@
 use std::collections::HashMap;
 use std::result::Result::Err;
-use std::io::prelude::*;
 use std::io::BufWriter;
+use std::io::Cursor;
+use std::io::Write;
 
 // base traits
 trait Node {
-    fn write(&self, stream: &mut BufWriter<Box<dyn std::io::Write>>) -> std::io::Result<()>;
+    fn write(&self, stream: &mut BufWriter<Box<dyn Write>>) -> std::io::Result<()>;
 }
 
 // text DOM nodes
@@ -13,7 +14,7 @@ struct Text {
     text: String
 }
 impl Node for Text {
-    fn write(&self, stream: &mut BufWriter<Box<dyn std::io::Write>>) -> std::io::Result<()> {
+    fn write(&self, stream: &mut BufWriter<Box<dyn Write>>) -> std::io::Result<()> {
         stream.write_all(self.text.as_bytes())?;
         
         Ok(())
@@ -32,7 +33,7 @@ impl Tag {
     }
 }
 impl Node for Tag {
-    fn write(&self, stream: &mut BufWriter<Box<dyn std::io::Write>>) -> std::io::Result<()> {
+    fn write(&self, stream: &mut BufWriter<Box<dyn Write>>) -> std::io::Result<()> {
         stream.write_all(b"<")?;
         
         if self.tag_name == "smc" {
@@ -53,22 +54,22 @@ impl Node for Tag {
         stream.write_all(b">")?;
         
         if self.tag_name == "smc" {
-            let writer: Box<dyn std::io::Write> = Box::new(std::io::Cursor::new(Vec::new()));
-            let mut buf: BufWriter<Box<dyn std::io::Write>> = BufWriter::new(writer);
+            let writer: Box<dyn Write> = Box::new(Cursor::new(Vec::new()));
+            let mut buf: BufWriter<Box<dyn Write>> = BufWriter::new(writer);
             
             for child_node in &self.children {
                 child_node.write(&mut buf)?;
             }
             
-            let writer: Box<dyn std::io::Write> = match buf.into_inner() {
+            let writer: Box<dyn Write> = match buf.into_inner() {
                 Ok(a) => a,
                 Err(_) => {panic!("writer not found")}
             };
             
-            let writer_dptr: *const Box<dyn std::io::Write> = &writer;
-            let writer_cptr: *const Box<std::io::Cursor<Vec<u8>>> = writer_dptr as *const Box<std::io::Cursor<Vec<u8>>>;
+            let writer_dptr: *const Box<dyn Write> = &writer;
+            let writer_cptr: *const Box<Cursor<Vec<u8>>> = writer_dptr as *const Box<Cursor<Vec<u8>>>;
             
-            let writer_a: &Box<std::io::Cursor<Vec<u8>>> = unsafe {
+            let writer_a: &Box<Cursor<Vec<u8>>> = unsafe {
                  &(*writer_cptr)
             };
             
@@ -319,8 +320,8 @@ fn read_kv(kv_file: &str) -> Result<Box<dyn Node>, String> {
 fn main() {
     let serving_page = read_kv("main.kv").unwrap();
     
-    let stdout: Box<dyn std::io::Write> = Box::new(std::io::stdout());
-    let mut writer = std::io::BufWriter::new(stdout);
+    let stdout: Box<dyn Write> = Box::new(std::io::stdout());
+    let mut writer = BufWriter::new(stdout);
     
     serving_page.write(&mut writer).unwrap();
 }
